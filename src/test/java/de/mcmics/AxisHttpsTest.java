@@ -27,4 +27,11 @@ class AxisHttpsTest {
         final String fahrenheit = tempConvert.celsiusToFahrenheit("10");
         Assertions.assertEquals("50", fahrenheit);
     }
+
+    @Test
+    void testHttpsWithPort() throws RemoteException {
+        final TempConvertStub tempConvert = new TempConvertStub("https://www.w3schools.com:443/xml/tempconvert.asmx");
+        final String fahrenheit = tempConvert.celsiusToFahrenheit("10");
+        Assertions.assertEquals("50", fahrenheit);
+    }
 }
