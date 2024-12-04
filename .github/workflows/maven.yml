@@ -24,7 +24,9 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Setup Maven Action
-      uses: s4u/setup-maven-action@1.16.0
+    - name: Set up Maven
+      uses: stCarolas/setup-maven@v5
+      with:
+        maven-version: 3.9.9
     - name: Test
       run: mvn -V --batch-mode --update-snapshots test
